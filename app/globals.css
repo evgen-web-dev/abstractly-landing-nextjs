@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(147.52deg, #F9FAFB 8.89%, #D2D6DB 100.48%);
   --foreground: #171717;
 }
 
 @theme inline {
+  --breakpoint-xl: 76rem;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-secondary: #FAFAFA;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --bg-body-gradient: linear-gradient(147.52deg, #F9FAFB 8.89%, #D2D6DB 100.48%);
+
+  --shadow-sec-button: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
+  background: var(--bg-body-gradient);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-sans), Arial, Helvetica, sans-serif;
+  @apply bg-no-repeat min-h-screen flex flex-col;
+}
+
+@layer basic-ui {
+
+  .button {
+    @apply cursor-pointer;
+  }
+  
+  .button--primary {
+    @apply bg-indigo-600 text-white hover:bg-indigo-700 focus:bg-indigo-700;
+  }
+
+  .button--secondary {
+    @apply border-[0.5px] border-[#E6E6E6] shadow-sec-button bg-white hover:bg-secondary;
+  }
+
+  .anchor-button-focus {
+    @apply focus:ring-4 focus:ring-indigo-50 rounded-sm outline-0 inline-block;
+  }
+
 }
