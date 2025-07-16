@@ -1,0 +1,14 @@
+@reference '../../globals.css';
+
+
+.header {
+    @apply text-2xl text-green-600;
+    
+    span {
+        @apply text-red-400;
+    }
+
+    @variant md {
+        @apply text-3xl text-purple-500;
+    }
+}
