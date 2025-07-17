@@ -1,10 +1,10 @@
 'use client';
 
 import { PropsWithChildren, useState } from "react"
-import Container from "@/app/components/Container/Container";
+import Container from "@/app/components/ui/Container/Container";
 import logoImage from "@/public/Logo.svg";
 import Image from "next/image";
-import { type NavLink } from "@/app/components/NavLink/types";
+import { type NavLink } from "@/app/components/ui/NavLink/types";
 import Button from "../Button/Button";
 import NavMenu from "../NavMenu/NavMenu";
 import BurgerMenuIcon from "../BurgerMenuIcon/BurgerMenuIcon";

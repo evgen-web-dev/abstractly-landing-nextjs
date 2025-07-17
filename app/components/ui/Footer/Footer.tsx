@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactNode } from "react"
-import Container from "@/app/components/Container/Container";
-import { type NavLink } from "@/app/components/NavLink/types";
+import Container from "@/app/components/ui/Container/Container";
+import { type NavLink } from "@/app/components/ui/NavLink/types";
 import { IconNavLink } from "./types";
 import NavMenu from "../NavMenu/NavMenu";
 import IconNavMenu from "../IconsNavMenu/IconsNavMenu";

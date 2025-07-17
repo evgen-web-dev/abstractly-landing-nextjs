@@ -1,7 +1,7 @@
-import Header from "@/app/components/Header/Header";
-import { type NavLink } from "./components/NavLink/types";
-import Footer from "./components/Footer/Footer";
-import { IconNavLink } from "./components/Footer/types";
+import Header from "@/app/components/ui/Header/Header";
+import { type NavLink } from "./components/ui/NavLink/types";
+import Footer from "./components/ui/Footer/Footer";
+import { IconNavLink } from "./components/ui/Footer/types";
 
 
 
