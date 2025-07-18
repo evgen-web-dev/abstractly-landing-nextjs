@@ -1,18 +1,22 @@
-import Header from "@/app/components/Header/Header";
-import { type NavLink } from "./components/NavLink/types";
-import Footer from "./components/Footer/Footer";
-import { IconNavLink } from "./components/Footer/types";
+import Header from "@/app/components/ui/Header/Header";
+import { type NavLink } from "./components/ui/NavLink/types";
+import Footer from "./components/ui/Footer/Footer";
+import { type IconNavLink } from "./components/ui/Footer/types";
+import SectionHeading from "./components/ui/SectionHeading/SectionHeading";
+import { sectionsDummyDataItems } from "./components/sections/constants";
+import { type SectionData } from "./components/sections/types";
+import BaseSection from "./components/sections/BaseSection/BaseSection";
 
 
 
 export default function Home() {
 
   const navItems: NavLink[] = [
-    {href: '#', title: 'Home'},
-    {href: '#', title: 'Features'},
-    {href: '#', title: 'Pricing'},
-    {href: '#', title: 'About us'},
-    {href: '#', title: 'Contact'},
+    { href: '#', title: 'Home' },
+    { href: '#', title: 'Features' },
+    { href: '#', title: 'Pricing' },
+    { href: '#', title: 'About us' },
+    { href: '#', title: 'Contact' },
   ];
 
   const footerNavItems = navItems.slice(1);
@@ -29,11 +33,17 @@ export default function Home() {
     <>
       <Header navItems={navItems} />
 
-      <main className="">
+      <div className="bg-white mx-4 mb-4 shadow-lg rounded-md grow flex flex-col">
+        <main>
           
-      </main>
+          {sectionsDummyDataItems && sectionsDummyDataItems.map((sectionDataItem: SectionData, index: number) => (
+             <BaseSection key={index} as={sectionDataItem.elementType} {...sectionDataItem.sectionData} />
+          ))}
 
-      <Footer navItems={footerNavItems} socialLinks={socialLinks} bottomElement={<p>© 2024 Abstractly, Inc. All rights reserved.</p>} />
+        </main>
+
+        <Footer className="mt-auto" navItems={footerNavItems} socialLinks={socialLinks} bottomElement={<p>© 2024 Abstractly, Inc. All rights reserved.</p>} />
+      </div>
 
     </>
   );
