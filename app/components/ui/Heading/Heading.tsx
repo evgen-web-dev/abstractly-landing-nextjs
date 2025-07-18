@@ -1,13 +1,13 @@
 import { ComponentProps } from "react";
-import { AllHeadingTags, type HeadingType } from "./types"
+import { type AllHeadingTags, type Heading as HeadingData } from "./types"
 
 
-type HeadingProps = HeadingType & ComponentProps<AllHeadingTags>;
+type HeadingProps = HeadingData & ComponentProps<AllHeadingTags>;
 
 
-export default function Heading({ text, headingTag: headingLevel }: HeadingProps) {
+export default function Heading({ text, headingTag }: HeadingProps) {
 
-    const HeadingComponent = headingLevel;
+    const HeadingComponent = headingTag;
 
     return (
         <HeadingComponent>{text}</HeadingComponent>

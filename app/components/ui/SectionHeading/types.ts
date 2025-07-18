@@ -1,7 +1,12 @@
-import { HeadingType } from "../Heading/types";
+import { type Heading } from "../Heading/types";
+
+type SectionHeadingAlignment = 'center' | 'left' | 'right';
+
+
 
 export type SectionHeading = {
-  heading: HeadingType; // our custom type
-  subheading: string;
-  eyebrow: string;
+  heading: Heading; 
+  subheading?: string;
+  eyebrow?: string;
+  alignment?: SectionHeadingAlignment;
 }

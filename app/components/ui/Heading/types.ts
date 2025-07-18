@@ -1,6 +1,6 @@
-import { ElementType } from "react";
+import { type ElementType } from "react";
 
-export type HeadingType = {
+export type Heading = {
   text: string;
   headingTag: ElementType<any, AllHeadingTags>;
 }

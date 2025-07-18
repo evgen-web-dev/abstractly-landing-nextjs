@@ -52,27 +52,35 @@ body {
     @apply focus:ring-4 focus:ring-indigo-50 rounded-sm outline-0 inline-block;
   }
 
+  h1,
+  .h1 {
+    /* text-shadow: ; */
+    @apply text-4xl md:text-5xl xl:text-6xl font-bold lg:text-shadow-[0px_4px_4px_rgba(0,0,0,0.25)];
+  }
+
   h2,
   .h2 {
-    @apply text-5xl font-semibold;
+    @apply text-3xl md:text-4xl xl:text-5xl font-semibold;
   }
 
   .heading-adjust--left h1,
   .heading-adjust--left h2,
-  .heading-adjust--left h3,
-  .heading-adjust--left h4,
+  .heading-adjust--left h3
+  /* .heading-adjust--left h4,
   .heading-adjust--left h5,
-  .heading-adjust--left h6 {
-    @apply translate-x-[-0.08em];
+  .heading-adjust--left h6  */
+  {
+    @apply md:translate-x-[-0.03em] lg:translate-x-[-0.08em] ;
   }
 
   .heading-adjust--right h1,
   .heading-adjust--right h2,
-  .heading-adjust--right h3,
-  .heading-adjust--right h4,
+  .heading-adjust--right h3
+  /* .heading-adjust--right h4,
   .heading-adjust--right h5,
-  .heading-adjust--right h6 {
-    @apply translate-x-[0.08em];
+  .heading-adjust--right h6  */
+  {
+    @apply md:translate-x-[0.03em] lg:translate-x-[0.08em] ;
   }
 
 }
