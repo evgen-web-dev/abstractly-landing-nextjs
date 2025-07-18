@@ -1,5 +1,5 @@
 import { ComponentProps, PropsWithChildren } from "react"
-import { IconNavLink } from "./types"
+import { type IconNavLink } from "./types"
 import Link from "next/link"
 import Image from "next/image";
 
