@@ -2,11 +2,9 @@ import Header from "@/app/components/ui/Header/Header";
 import { type NavLink } from "./components/ui/NavLink/types";
 import Footer from "./components/ui/Footer/Footer";
 import { type IconNavLink } from "./components/ui/Footer/types";
-import SectionHeading from "./components/ui/SectionHeading/SectionHeading";
 import { sectionsDummyDataItems } from "./components/sections/constants";
 import { type SectionData } from "./components/sections/types";
 import BaseSection from "./components/sections/BaseSection/BaseSection";
-
 
 
 export default function Home() {
