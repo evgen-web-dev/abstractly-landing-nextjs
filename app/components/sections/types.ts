@@ -1,3 +1,4 @@
+import ImageInfo, { ImageInfoProps } from "./ImageInfo/ImageInfo";
 import InfoGrid, { InfoGridProps } from "./InfoGrid/InfoGrid";
 import LogosCarousel, { type LogosCarouselProps } from "./LogosCarousel/LogosCarousel";
 import TextImageBanner, { type TextImageBannerProps } from "./TextImageBanner/TextImageBanner";
@@ -5,14 +6,16 @@ import TextImageBanner, { type TextImageBannerProps } from "./TextImageBanner/Te
 // in this type -> all sections component's props types should be merged to define a union type of props for all sections
 export type AllSectionsPropsType = TextImageBannerProps
     | LogosCarouselProps
-    | InfoGridProps;
+    | InfoGridProps
+    | ImageInfoProps
 
 
 
 // in this type -> all sections component's definitions should be merged to define a union type of props for all sections
 export type AllSectionsElementsType = typeof TextImageBanner
     | typeof LogosCarousel
-    | typeof InfoGrid;
+    | typeof InfoGrid
+    | typeof ImageInfo
 
 
 
@@ -32,3 +35,4 @@ export type BaseSectionData<E extends AllSectionsElementsType, S extends AllSect
 export type SectionData = BaseSectionData<typeof TextImageBanner, TextImageBannerProps>
     | BaseSectionData<typeof LogosCarousel, LogosCarouselProps>
     | BaseSectionData<typeof InfoGrid, InfoGridProps>
+    | BaseSectionData<typeof ImageInfo, ImageInfoProps>
