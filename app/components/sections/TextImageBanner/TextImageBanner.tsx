@@ -5,11 +5,8 @@ import SectionHeading from "../../ui/SectionHeading/SectionHeading";
 import { type SectionHeading as SectionHeadingData } from "../../ui/SectionHeading/types";
 import { type Image as ImageData } from "../../ui/types";
 import Button from "../../ui/Button/Button";
-import { type BaseSectionData } from "../types";
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentProps, ComponentPropsWithoutRef } from "react";
 
-
-export type TextImageBannerSectionData = BaseSectionData<typeof TextImageBanner, TextImageBannerProps>
 
 export type TextImageBannerProps = {
     sectionHeading: SectionHeadingData; // our custom type
@@ -18,10 +15,10 @@ export type TextImageBannerProps = {
     image: ImageData; // out custom type
 } & ComponentPropsWithoutRef<'div'>
 
-export default function TextImageBanner({ sectionHeading, firstButton, secondButton, image }: TextImageBannerProps) {
+export default function TextImageBanner({ sectionHeading, firstButton, secondButton, image, className }: TextImageBannerProps) {
 
     return (
-        <Container className="py-12 md:py-18 xl:py-24">
+        <Container className={className || ''}>
             <div className="flex flex-wrap lg:flex-nowrap items-center gap-12 lg:gap-5">
                 <div className="w-full lg:w-[42%]" >
                     <SectionHeading {...sectionHeading} />
