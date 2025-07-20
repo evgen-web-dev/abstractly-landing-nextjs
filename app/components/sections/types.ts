@@ -1,15 +1,18 @@
+import InfoGrid, { InfoGridProps } from "./InfoGrid/InfoGrid";
 import LogosCarousel, { type LogosCarouselProps } from "./LogosCarousel/LogosCarousel";
 import TextImageBanner, { type TextImageBannerProps } from "./TextImageBanner/TextImageBanner";
 
 // in this type -> all sections component's props types should be merged to define a union type of props for all sections
 export type AllSectionsPropsType = TextImageBannerProps
-    | LogosCarouselProps;
+    | LogosCarouselProps
+    | InfoGridProps;
 
 
 
 // in this type -> all sections component's definitions should be merged to define a union type of props for all sections
 export type AllSectionsElementsType = typeof TextImageBanner
-    | typeof LogosCarousel;
+    | typeof LogosCarousel
+    | typeof InfoGrid;
 
 
 
@@ -27,4 +30,5 @@ export type BaseSectionData<E extends AllSectionsElementsType, S extends AllSect
 // to correctly type and "type-guard" sectionsDummyDataItems[] (or any other data-containers which are of SectionData / SectionData[] and supposed to be 
 // data-source for section-related components)
 export type SectionData = BaseSectionData<typeof TextImageBanner, TextImageBannerProps>
-    | BaseSectionData<typeof LogosCarousel, LogosCarouselProps>;
+    | BaseSectionData<typeof LogosCarousel, LogosCarouselProps>
+    | BaseSectionData<typeof InfoGrid, InfoGridProps>

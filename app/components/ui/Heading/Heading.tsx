@@ -7,7 +7,7 @@ type HeadingProps = HeadingData & ComponentProps<AllHeadingTags>;
 
 export default function Heading({ text, headingTag }: HeadingProps) {
 
-    const HeadingComponent = headingTag;
+    const HeadingComponent = headingTag || 'h2';
 
     return (
         <HeadingComponent>{text}</HeadingComponent>
