@@ -5,6 +5,8 @@ import { type IconNavLink } from "./components/ui/Footer/types";
 import { sectionsDummyDataItems } from "./components/sections/constants";
 import { type SectionData } from "./components/sections/types";
 import BaseSection from "./components/sections/BaseSection/BaseSection";
+import Container from "./components/ui/Container/Container";
+import CircleIcon from "./components/ui/CircleIcon/CircleIcon";
 
 
 export default function Home() {
@@ -37,6 +39,12 @@ export default function Home() {
           {sectionsDummyDataItems && sectionsDummyDataItems.map((sectionDataItem: SectionData, index: number) => (
              <BaseSection key={index} as={sectionDataItem.elementType} {...sectionDataItem.sectionData} />
           ))}
+
+          <Container>
+            <CircleIcon iconUrl="/sections/icons/hd-quality.svg" />
+            <CircleIcon iconUrl="/sections/icons/rainbow.svg" />
+            <CircleIcon iconUrl="/sections/icons/water-percent.svg" />
+          </Container>
 
         </main>
 
