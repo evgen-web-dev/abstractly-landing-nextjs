@@ -16,7 +16,7 @@ export default function SectionHeading({ heading, subheading, eyebrow, alignment
     }
 
     return (
-        <div className={'flex flex-col ' + (alignmentClasses[alignment] || '') + className}>
+        <div className={'flex flex-col ' + (alignmentClasses[alignment] || '') + (className || '')}>
             {eyebrow && <span className="text-primary text-base mt-5 font-semibold block mb-3">{eyebrow}</span>}
             <Heading {...heading} />
             {subheading && <p className="text-base mt-5 max-w-[700px]">{subheading}</p>}

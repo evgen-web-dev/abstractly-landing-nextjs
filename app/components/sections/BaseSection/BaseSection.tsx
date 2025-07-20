@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 import { type AllSectionsElementsType } from "../types";
 
 
@@ -12,15 +12,18 @@ import { type AllSectionsElementsType } from "../types";
 // our section-related components like BaseSection as={TextImageBanner}
 
 type BaseSectionProps<T extends AllSectionsElementsType> = {
-    as?: T,
+    as: T,
     children?: ReactNode
-} & ComponentPropsWithoutRef<T>;
+} & ComponentPropsWithoutRef<'section'>;
 
 
 export default function BaseSection<C extends AllSectionsElementsType>({ as, children, className, ...props }: BaseSectionProps<C>) {
 
-    // 'div' is a fallback to ensure Ts that we always will have valid instance of AllSectionsElementsType passed in "as" prop 
-    const SectionComponent = as || 'div';
+    // We are type-guarding element that can be passed via "as" props with the help of AllSectionsElementsType type, so
+    // we can type-cast "as" as ElementType to convinse TS that we know what element SectionComponent is 
+    // and what exact props SectionComponent is accepting
+
+    const SectionComponent = as as ElementType;
 
     return (
         <section className={className}>
