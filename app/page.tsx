@@ -7,6 +7,7 @@ import { type SectionData } from "./components/sections/types";
 import BaseSection from "./components/sections/BaseSection/BaseSection";
 import Container from "./components/ui/Container/Container";
 import CircleIcon from "./components/ui/CircleIcon/CircleIcon";
+import InfoCard from "./components/ui/InfoCard/InfoCard";
 
 
 export default function Home() {
@@ -35,16 +36,10 @@ export default function Home() {
 
       <div className="bg-white mx-4 mb-4 shadow-lg rounded-md grow flex flex-col">
         <main>
-          
-          {sectionsDummyDataItems && sectionsDummyDataItems.map((sectionDataItem: SectionData, index: number) => (
-             <BaseSection key={index} as={sectionDataItem.elementType} {...sectionDataItem.sectionData} />
-          ))}
 
-          <Container>
-            <CircleIcon iconUrl="/sections/icons/hd-quality.svg" />
-            <CircleIcon iconUrl="/sections/icons/rainbow.svg" />
-            <CircleIcon iconUrl="/sections/icons/water-percent.svg" />
-          </Container>
+          {sectionsDummyDataItems && sectionsDummyDataItems.map((sectionDataItem: SectionData, index: number) => (
+            <BaseSection key={index} as={sectionDataItem.elementType} {...sectionDataItem.sectionData} />
+          ))}
 
         </main>
 
