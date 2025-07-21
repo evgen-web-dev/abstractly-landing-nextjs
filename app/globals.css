@@ -11,7 +11,11 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-secondary: #FAFAFA;
+  --color-dark-secondary: #525252;
   --color-primary: var(--color-indigo-600);
+  --color-brand: var(--color-indigo-700);
+  --color-secondary-border: #E6E6E6;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
@@ -42,11 +46,15 @@ body {
   }
 
   .button--primary {
-    @apply bg-primary text-white hover:bg-indigo-700 focus:bg-indigo-700;
+    @apply bg-primary text-white hover:bg-brand focus:bg-brand;
   }
 
   .button--secondary {
-    @apply border-[0.5px] border-[#E6E6E6] shadow-sec-button bg-white hover:bg-secondary;
+    @apply border-[0.5px] border-secondary-border shadow-sec-button bg-white hover:bg-secondary;
+  }
+
+  .button--secondary.button--reset-style {
+    @apply border-transparent shadow-none bg-transparent;
   }
 
   .anchor-button-focus {
