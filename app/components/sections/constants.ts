@@ -12,6 +12,7 @@ import InfoGrid from "./InfoGrid/InfoGrid";
 import ImageInfo from "./ImageInfo/ImageInfo";
 import infoImage from "@/public/sections/info-image.png";
 import infoImage2 from "@/public/sections/info-image-2.png";
+import TiersInfo from "./TiersInfo/TiersInfo";
 
 export const sectionsDummyDataItems: SectionData[] = [
     {
@@ -184,6 +185,70 @@ export const sectionsDummyDataItems: SectionData[] = [
                 alt: 'info image 2'
             },
             imagePosition: 'left'
+        }
+    },
+    {
+        elementType: TiersInfo,
+        sectionData: {
+            className: "py-12 md:py-18",
+            sectionHeading: {
+                heading: {
+                    headingTag: 'h2',
+                    text: "Fit for all your needs"
+                },
+                subheading: "Pick the plan that suits you today and step up as your demands grow - our flexible options have your journey mapped out.",
+                eyebrow: "Pricing Tiers",
+                alignment: 'center'
+            },
+            tiers: [
+                {
+                    id: 'basic-plan',
+                    name: 'Basic Plan', description: 'Access to a curated selection of abstract images',
+                    featuresList: [
+                        'Standard quality images',
+                        'Limited to personal use',
+                        'Email support'
+                    ],
+                    prices: {
+                        'monthly': { amount: 9.99, currency: "USD", type: "monthly" },
+                        'annual': { amount: 98.99, currency: "USD", type: "annual" },
+                    },
+                    isFeatured: false
+                },
+                {
+                    id: 'standard-plan',
+                    name: 'Standard Plan', description: 'Next-level Integrations, priced economically',
+                    featuresList: [
+                        'Expanded library with more diverse abstract images',
+                        'High-resolution images available',
+                        'Suitable for commercial use',
+                        'Priority email support',
+                        'Advanced analytics',
+                    ],
+                    prices: {
+                        'monthly': { amount: 19.99, currency: "USD", type: "monthly" },
+                        'annual': { amount: 148.99, currency: "USD", type: "annual" },
+                    },
+                    isFeatured: true,
+                },
+                {
+                    id: 'premium-plan',
+                    name: 'Premium Plan', description: 'Access to a curated selection of abstract images',
+                    featuresList: [
+                        'Full access to the entire image library, including exclusive content',
+                        'Highest quality images, including premium collections',
+                        'Commercial and resale rights',
+                        'Dedicated customer support line',
+                        '24/7 support response time',
+                        'Advanced analytics and insights'
+                    ],
+                    prices: {
+                        'monthly': { amount: 39.99, currency: "USD", type: "monthly" },
+                        'annual': { amount: 189.99, currency: "USD", type: "annual" },
+                    },
+                    isFeatured: false
+                }
+            ]
         }
     }
 ]

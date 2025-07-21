@@ -2,12 +2,14 @@ import ImageInfo, { ImageInfoProps } from "./ImageInfo/ImageInfo";
 import InfoGrid, { InfoGridProps } from "./InfoGrid/InfoGrid";
 import LogosCarousel, { type LogosCarouselProps } from "./LogosCarousel/LogosCarousel";
 import TextImageBanner, { type TextImageBannerProps } from "./TextImageBanner/TextImageBanner";
+import TiersInfo, { TiersInfoProps } from "./TiersInfo/TiersInfo";
 
 // in this type -> all sections component's props types should be merged to define a union type of props for all sections
 export type AllSectionsPropsType = TextImageBannerProps
     | LogosCarouselProps
     | InfoGridProps
     | ImageInfoProps
+    | TiersInfoProps
 
 
 
@@ -16,6 +18,7 @@ export type AllSectionsElementsType = typeof TextImageBanner
     | typeof LogosCarousel
     | typeof InfoGrid
     | typeof ImageInfo
+    | typeof TiersInfo
 
 
 
@@ -36,3 +39,4 @@ export type SectionData = BaseSectionData<typeof TextImageBanner, TextImageBanne
     | BaseSectionData<typeof LogosCarousel, LogosCarouselProps>
     | BaseSectionData<typeof InfoGrid, InfoGridProps>
     | BaseSectionData<typeof ImageInfo, ImageInfoProps>
+    | BaseSectionData<typeof TiersInfo, TiersInfoProps>
