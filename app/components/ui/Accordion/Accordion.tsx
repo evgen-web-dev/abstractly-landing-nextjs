@@ -16,14 +16,6 @@ export type AccordionProps<T extends string> = {
 
 export default function Accordion<K extends string>({ items, onItemToggle, className }: AccordionProps<K>) {
 
-    const expandIcon = useRef(<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM5 9H15V11H5V9Z" fill="#A3A3A3" />
-    </svg>
-    );
-    const closeIcon = useRef(<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM5 9H15V11H5V9Z" fill="#A3A3A3" />
-    </svg>
-    )
 
     return (
         <div className={"w-full flex flex-col" + (className ? ' ' + className : '')}>
@@ -31,7 +23,7 @@ export default function Accordion<K extends string>({ items, onItemToggle, class
             {items && (
                 <dl className="w-full">
                     {items.map((item) => (
-                        <div key={item.id} className="border-b-secondary-border border-b last:border-none mb-8 pb-8">
+                        <div key={item.id} className="border-b-secondary-border border-b last:border-none mb-8 last:mb-0 pb-8 last:pb-0">
                             <dt className="font-semibold relative">
                                 <button
                                     className="cursor-pointer text-left pr-10"
@@ -60,7 +52,11 @@ export default function Accordion<K extends string>({ items, onItemToggle, class
                                 </button>
                             </dt>
 
-                            <dd id={`answer-${item.id}`} className={"mt-4" + (item.isOpened ? '' : ' hidden')}>{item.content}</dd>
+                            <dd
+                                role="region"
+                                aria-labelledby={`question-${item.id}`}
+                                id={`answer-${item.id}`}
+                                className={"mt-4" + (item.isOpened ? '' : ' hidden')}>{item.content}</dd>
                         </div>
                     ))}
                 </dl>
