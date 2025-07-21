@@ -13,6 +13,7 @@ import ImageInfo from "./ImageInfo/ImageInfo";
 import infoImage from "@/public/sections/info-image.png";
 import infoImage2 from "@/public/sections/info-image-2.png";
 import TiersInfo from "./TiersInfo/TiersInfo";
+import AccordionSection from "./AccordionSection/AccordionSection";
 
 export const sectionsDummyDataItems: SectionData[] = [
     {
@@ -249,6 +250,71 @@ export const sectionsDummyDataItems: SectionData[] = [
                     isFeatured: false
                 }
             ]
+        }
+    },
+    {
+        elementType: AccordionSection,
+        sectionData: {
+            className: "py-12 md:py-18",
+            sectionHeading: {
+                heading: {
+                    headingTag: 'h2',
+                    text: 'Frequently asked questions'
+                },
+                subheading: 'Choose any questions you need',
+                alignment: 'center'
+            },
+            accordionItems: [
+                {
+                    id: 'item-1',
+                    title: "What types of images are available on your platform?",
+                    content: "Our platform offers a diverse range of abstract images to suit various preferences and needs. From vibrant geometric patterns to soothing landscapes, we strive to provide a wide selection to cater to different tastes.",
+                    isOpened: true
+                },
+                {
+                    id: 'item-2',
+                    title: "How can I access and download images from your platform?",
+                    content: "Accessing and downloading images from our platform is simple. Upon signing up and logging in, users can browse through our curated collection and download their chosen images directly to their devices with just a few clicks.",
+                    isOpened: false
+                },
+                {
+                    id: 'item-3',
+                    title: "Do you offer free images, or is there a subscription required?",
+                    content: "We provide both free and premium images on our platform. Users can explore a selection of free images without any subscription. For access to our entire library and additional features, we offer subscription plans tailored to different user needs.",
+                    isOpened: false
+                },
+                {
+                    id: 'item-4',
+                    title: "Do you offer free images, or is there a subscription required?",
+                    content: "We accept a variety of payment methods, including credit/debit cards and online payment gateways, to make the subscription process convenient for our users.",
+                    isOpened: false
+                },
+                {
+                    id: 'item-5',
+                    title: "Can I cancel or modify my subscription at any time?",
+                    content: "Yes, absolutely. You have the flexibility to cancel or modify your subscription at any time through your account settings. Changes will take effect immediately, ensuring you have full control over your subscription preferences.",
+                    isOpened: false
+                },
+                {
+                    id: 'item-6',
+                    title: "How frequently do you update your image collection?",
+                    content: "We regularly update our image collection with fresh and captivating content to keep our users inspired and engaged. New images are added consistently to ensure there's always something new to discover on our platform.",
+                    isOpened: false
+                }
+            ],
+            ctaBannerData: {
+                bannerTitle: {
+                    headingTag: 'h2',
+                    text: "Can't find the answer you're looking for?"
+                },
+                button: {
+                    buttonType: 'anchor',
+                    href: '#get-in-touch',
+                    styleType: 'primary',
+                    title: 'Get in touch'
+                },
+                text: "Reach out to our customer support team."
+            }
         }
     }
 ]

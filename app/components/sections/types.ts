@@ -1,3 +1,4 @@
+import AccordionSection, { AccordionSectionProps } from "./AccordionSection/AccordionSection";
 import ImageInfo, { ImageInfoProps } from "./ImageInfo/ImageInfo";
 import InfoGrid, { InfoGridProps } from "./InfoGrid/InfoGrid";
 import LogosCarousel, { type LogosCarouselProps } from "./LogosCarousel/LogosCarousel";
@@ -10,6 +11,7 @@ export type AllSectionsPropsType = TextImageBannerProps
     | InfoGridProps
     | ImageInfoProps
     | TiersInfoProps
+    | AccordionSectionProps
 
 
 
@@ -19,6 +21,7 @@ export type AllSectionsElementsType = typeof TextImageBanner
     | typeof InfoGrid
     | typeof ImageInfo
     | typeof TiersInfo
+    | typeof AccordionSection
 
 
 
@@ -40,3 +43,4 @@ export type SectionData = BaseSectionData<typeof TextImageBanner, TextImageBanne
     | BaseSectionData<typeof InfoGrid, InfoGridProps>
     | BaseSectionData<typeof ImageInfo, ImageInfoProps>
     | BaseSectionData<typeof TiersInfo, TiersInfoProps>
+    | BaseSectionData<typeof AccordionSection, AccordionSectionProps>
