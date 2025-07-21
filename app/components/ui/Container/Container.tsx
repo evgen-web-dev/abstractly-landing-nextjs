@@ -11,7 +11,7 @@ export default function Container({ children, isFullWidth, className }: Containe
 
     return (
         <>
-            <div className={(className ? (className + ' ') : '') + ' ' +(isFullWidth ? '' : 'max-w-[1248px] ') + "mx-auto px-4"}>{children}</div>
+            <div className={(className ? (className + ' ') : '') + ' ' +(isFullWidth ? '' : 'max-w-[1248px] ') + "w-full mx-auto px-4"}>{children}</div>
         </>
     )
 }
