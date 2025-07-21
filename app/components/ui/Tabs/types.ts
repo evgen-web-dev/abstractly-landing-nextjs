@@ -1,5 +1,5 @@
-export type Tab = {
-  id: string;
+export type Tab<T> = {
+  id: T;
   text: string;
   isSelected: boolean;
 }
