@@ -10,11 +10,13 @@ type ButtonProps = PropsWithChildren<Button> & ComponentProps<'button' | 'a'>;
 
 export default function Button({ ...props }: ButtonProps) {
 
-    let classes = `${props.className || ''} button button--${props?.styleType || 'primary'} font-medium py-3 px-7 anchor-button-focus whitespace-nowrap`;
+    let classes = `button button--${props?.styleType || 'primary'} font-medium py-3 px-7 anchor-button-focus whitespace-nowrap${props.className ? (' ' + props.className) : ''} `;
     
     function handleClick<T>(e: MouseEvent<T>) {
         const onButtonClick = props.onClick as MouseEventHandler<T>;
-        onButtonClick(e);
+        if (onButtonClick) {
+            onButtonClick(e);
+        }
     }
     
     if (props.buttonType === "anchor") {
