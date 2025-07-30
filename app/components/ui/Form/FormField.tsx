@@ -1,3 +1,6 @@
+'use client';
+
+
 import { ChangeEvent, ElementType, useCallback, useRef, useState } from "react";
 import { FormElementProps, FormElementType } from "./types";
 import { UseFormRegisterReturn } from "react-hook-form";

@@ -5,9 +5,6 @@ import { type IconNavLink } from "./components/ui/Footer/types";
 import { sectionsDummyDataItems } from "./components/sections/constants";
 import { type SectionData } from "./components/sections/types";
 import BaseSection from "./components/sections/BaseSection/BaseSection";
-import Container from "./components/ui/Container/Container";
-import CircleIcon from "./components/ui/CircleIcon/CircleIcon";
-import InfoCard from "./components/ui/InfoCard/InfoCard";
 
 
 export default function Home() {
@@ -43,7 +40,7 @@ export default function Home() {
 
         </main>
 
-        <Footer className="mt-auto" navItems={footerNavItems} socialLinks={socialLinks} bottomElement={<p>© 2024 Abstractly, Inc. All rights reserved.</p>} />
+        <Footer className="mt-auto" navItems={footerNavItems} socialLinks={socialLinks} bottomElement={<p className="text-center mt-20">{"© " + ((new Date).getFullYear()) + " Abstractly, Inc. All rights reserved."}</p>} />
       </div>
 
     </>

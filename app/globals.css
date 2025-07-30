@@ -170,7 +170,7 @@ body {
 
 
   .form-field__bottom {
-    @apply absolute top-[calc(100%+4px)] left-0.5 w-full text-sm flex gap-5 justify-between;
+    @apply md:absolute md:top-[calc(100%+4px)] md:left-0.5 w-full text-sm flex gap-5 justify-between;
   }
 
   

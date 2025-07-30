@@ -1,21 +1,27 @@
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
-import { FormFieldDataItem, FormSubmissionResponse } from "./types"
-import FormField from "./FormField"
+'use client';
+
+
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { FormFieldDataItem, FormSubmissionResponse } from "./types";
+import FormField from "./FormField";
 import { ComponentPropsWithoutRef, ReactNode, useId, useState } from "react";
 import Button from "../Button/Button";
 
 
 
-type FormProps<FV extends FieldValues> = {
+export type Form<FV extends FieldValues> = {
   fields: FormFieldDataItem<FV>[],
   submitButtonData?: {
     caption?: string
     cssClasses?: string
   },
-  onFormSubmit: (data: FV) => Promise<FormSubmissionResponse>;
+  onFormSubmit?: (data: FV) => Promise<FormSubmissionResponse>;
   formContainerClass?: string,
   fieldsContainerClass?: string,
-} & ComponentPropsWithoutRef<'div'>
+}
+
+
+export type FormProps<FV extends FieldValues> = Form<FV> & ComponentPropsWithoutRef<'div'>
 
 
 export default function Form<FV extends FieldValues>({ fields, submitButtonData, onFormSubmit: onFormSubmit, fieldsContainerClass, formContainerClass, className }: FormProps<FV>) {
@@ -32,23 +38,25 @@ export default function Form<FV extends FieldValues>({ fields, submitButtonData,
   const onSubmit: SubmitHandler<FV> = (data) => {
     setLoadingResponse(true);
 
-    const signUpRes = onFormSubmit(data);
+    if (onFormSubmit) {
+      const signUpRes = onFormSubmit(data);
 
-    signUpRes.then((res) => {
-      setSubmissionResponse(res)
-      setLoadingResponse(false);
+      signUpRes.then((res) => {
+        setSubmissionResponse(res)
+        setLoadingResponse(false);
 
-      setTimeout(() => {
-        setSubmissionResponse(prev => ({...prev, message: ''}))
-      }, 5000)
-    });
+        setTimeout(() => {
+          setSubmissionResponse(prev => ({ ...prev, message: '' }))
+        }, 5000)
+      });
+    }
   };
 
   return (
     <div className={"" + (className ? ' ' + className : '')}>
       <form className={formContainerClass} id={formId} onSubmit={handleSubmit(onSubmit)}>
         {
-          fields && <div className={"grid gap-30" + (fieldsContainerClass ? (" " + fieldsContainerClass) : "")}>
+          fields && <div className={"grid max-md:grid-cols-1 max-md:w-full" + (fieldsContainerClass ? (" " + fieldsContainerClass) : "")}>
             {
               fields.map((field, index) => (
                 <FormField

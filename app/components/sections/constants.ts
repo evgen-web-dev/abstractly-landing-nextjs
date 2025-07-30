@@ -14,6 +14,9 @@ import infoImage from "@/public/sections/info-image.png";
 import infoImage2 from "@/public/sections/info-image-2.png";
 import TiersInfo from "./TiersInfo/TiersInfo";
 import AccordionSection from "./AccordionSection/AccordionSection";
+import SubscribeToUpdates from "./SubscribeToUpdates/SubscribeToUpdates";
+import { signUpUserToUpdates } from "../lib/actions";
+import subscibeToUpdatesImgage from "@/public/sections/subscribe-to-updates.png";
 
 export const sectionsDummyDataItems: SectionData[] = [
     {
@@ -314,6 +317,54 @@ export const sectionsDummyDataItems: SectionData[] = [
                     title: 'Get in touch'
                 },
                 text: "Reach out to our customer support team."
+            }
+        }
+    },
+    {
+        elementType: SubscribeToUpdates,
+        sectionData: {
+            className: "py-12 md:py-18 xl:py-24",
+            sectionHeading: {
+                alignment: 'left',
+                heading: {
+                    headingTag: 'h2',
+                    text: "Get the finest curated abstracts delivered weekly to your inbox"
+                },
+            },
+            listItems: [
+                "Exclusive access to new abstract images and collections",
+                "Unlock special promotions only for subscribers",
+                "Regular doses of artistic inspiration",
+            ],
+            formData: {
+                fields: [
+                    {
+                        fieldElement: 'input',
+                        fieldProps: {
+                            placeholder: 'example@example.com',
+                            autoComplete: 'off',
+                            type: 'email'
+                        },
+                        fieldConfig: {
+                            name: 'email',
+                            label: 'Email',
+                            showLabel: false,
+                            registerOptions: {
+                                value: '',
+                                required: {
+                                    value: true, message: 'Email is required'
+                                }
+                            }
+                        }
+                    },
+                ],
+                fieldsContainerClass: "grow",
+                formContainerClass: "flex gap-4 md:gap-2.5 items-center flex-wrap md:flex-nowrap",
+                submitButtonData: { cssClasses: '!py-2 !px-4', caption: 'Subscribe' },
+            },
+            image: {
+                src: subscibeToUpdatesImgage,
+                alt: 'subscibe to updates'
             }
         }
     }
