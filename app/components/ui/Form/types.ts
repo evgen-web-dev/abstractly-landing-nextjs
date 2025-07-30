@@ -1,6 +1,11 @@
 import { ComponentProps, JSX } from "react";
-import Button from "../Button/Button";
-import { FieldValues, RegisterOptions } from "react-hook-form";
+import { FieldValues, Path, RegisterOptions } from "react-hook-form";
+
+
+export type FormSubmissionResponse = {
+    success: boolean;
+    message: string;
+}
 
 
 
@@ -16,13 +21,16 @@ To add support for new form-element type - add it either
 
 
 // Here - there should be added form-elements which are in form of native HTML elements (exist among keys of JSX.IntrinsicElements)
-type FormIntrinsicElements = 'input' | 'textarea' | 'select';
+export type FormIntrinsicElements = 'input' | 'textarea';
 
 
 
 // Here - there should be added form-elements which are in form of React component
 const formCustomElementComponents = {
-    Button, // so key is "Button" as value is Button component's reference
+    /*
+     this feature for supporting custom components as elements to be passed as 
+     form-fields-elements needs more testing and is not completed yet
+    */
 } as const;
 
 
@@ -55,9 +63,11 @@ type FormComponentElementProps = {
 
 
 
-type FormFieldConfig<FV extends FieldValues, N extends keyof FV, > = {
-    name: N,
-    label: string;
+type FormFieldConfig<FV extends FieldValues> = {
+    name: Path<FV>;
+    hint?: string,
+    label?: string;
+    showLabel?: boolean
     registerOptions?: RegisterOptions<FV>
 }
 
@@ -68,7 +78,7 @@ export type FormElementType = FormIntrinsicElements | keyof FormComponentElement
 
 
 // here we automatically type-narrow props depending on form-element's type
-export type FormElementProps<E extends FormElementType> = JSX.IntrinsicElements[E extends keyof JSX.IntrinsicElements ? E : never]
+export type FormElementProps<E extends FormElementType> = Omit<JSX.IntrinsicElements[E extends keyof JSX.IntrinsicElements ? E : never], 'value' | 'onBlur' | 'onChange'>
     | FormComponentElementProps[E extends keyof FormComponentElementProps ? E : never]
 
 
@@ -124,7 +134,7 @@ type BaseFormFieldData<E extends FormElementType, FV extends FieldValues> = {
     by passing type that describes the shape of particular form via FV generic - we are autmatically narrowing down values
     that can be set to fieldConfig.name
     */ 
-    fieldConfig: FormFieldConfig<FV, keyof FV>
+    fieldConfig: FormFieldConfig<FV>
 }
 
 
