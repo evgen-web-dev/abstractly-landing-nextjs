@@ -21,6 +21,7 @@ import ContactForm from "./ContactForm/ContactForm";
 export const sectionsDummyDataItems: SectionData[] = [
     {
         elementType: TextImageBanner,
+        sectionId: 'home',
         sectionData: {
             className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
@@ -33,13 +34,13 @@ export const sectionsDummyDataItems: SectionData[] = [
             },
             firstButton: {
                 buttonType: 'anchor',
-                href: '#learn-more',
+                href: '#features',
                 styleType: 'secondary',
                 title: 'Learn More'
             },
             secondButton: {
                 buttonType: 'anchor',
-                href: '#see-pricing',
+                href: '#pricing',
                 styleType: 'primary',
                 title: 'See Pricing'
             },
@@ -66,6 +67,7 @@ export const sectionsDummyDataItems: SectionData[] = [
     },
     {
         elementType: InfoGrid,
+        sectionId: 'features',
         sectionData: {
             className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
@@ -113,6 +115,7 @@ export const sectionsDummyDataItems: SectionData[] = [
     },
     {
         elementType: ImageInfo,
+        sectionId: 'about-us',
         sectionData: {
             className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
@@ -193,6 +196,7 @@ export const sectionsDummyDataItems: SectionData[] = [
     },
     {
         elementType: TiersInfo,
+        sectionId: 'pricing',
         sectionData: {
             className: "py-12 md:py-18",
             sectionHeading: {
@@ -312,7 +316,7 @@ export const sectionsDummyDataItems: SectionData[] = [
                 },
                 button: {
                     buttonType: 'anchor',
-                    href: '#get-in-touch',
+                    href: '#contact',
                     styleType: 'primary',
                     title: 'Get in touch'
                 },
@@ -370,6 +374,7 @@ export const sectionsDummyDataItems: SectionData[] = [
     },
     {
         elementType: ContactForm,
+        sectionId: 'contact',
         sectionData: {
             className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {

@@ -6,6 +6,7 @@ import { FormFieldDataItem, FormSubmissionResponse } from "./types";
 import FormField from "./FormField";
 import { ComponentPropsWithoutRef, ReactNode, useEffect, useId, useRef, useState } from "react";
 import Button from "../Button/Button";
+import { scrollToElement } from "@/app/utils/utils";
 
 
 
@@ -62,10 +63,7 @@ export default function Form<FV extends FieldValues>({ fields, submitButtonData,
       const toScrollDown = responseMsgRef.current.getBoundingClientRect().top > (document.documentElement.clientHeight / 2);
 
       // scrolling down a bit only in case when response message is in lower
-      window.scrollTo({
-        top: window.scrollY + (document.documentElement.clientHeight / 3 * (toScrollDown ? 1 : 0)),
-        behavior: 'smooth'
-      });
+      scrollToElement(window.scrollY + (document.documentElement.clientHeight / 3 * (toScrollDown ? 1 : 0)));
     }
   }, [submissionResponse]);
 
