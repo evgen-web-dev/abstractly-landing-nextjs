@@ -152,8 +152,7 @@ body {
   input[type="url"],
   input[type="tel"],
   input[type="password"],
-  textarea
-  {
+  textarea {
     outline: none;
     @apply border border-secondary-border rounded-sm py-[0.44em] px-3 focus:border-primary focus:ring-4 focus:ring-indigo-50 bg-secondary;
   }
@@ -173,7 +172,16 @@ body {
     @apply md:absolute md:top-[calc(100%+4px)] md:left-0.5 w-full text-sm flex gap-5 justify-between;
   }
 
-  
+
+  .form-field__label {
+    @apply font-medium;
+  }
+
+
+  .form-field__hint-msg, .form-field__max-len {
+    @apply text-input-unactive;
+  }
+
   .form-field.form-field--error input[type="text"],
   .form-field.form-field--error input[type="email"],
   .form-field.form-field--error input[type="search"],
