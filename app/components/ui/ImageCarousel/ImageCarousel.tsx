@@ -66,6 +66,7 @@ export default function ImageCarousel({ images, autoPlay = false, infinite = fal
                     <Image
                         key={typeof image.src === 'string' ? image.src : image.src.src + '-' + index}
                         className="embla__slide" {...image}
+                        quality={100} unoptimized
                     />)}
             </div>
         </div>

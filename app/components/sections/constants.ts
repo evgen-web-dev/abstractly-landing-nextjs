@@ -20,10 +20,10 @@ import ContactForm from "./ContactForm/ContactForm";
 
 export const sectionsDummyDataItems: SectionData[] = [
     {
-        elementType: TextImageBanner,
+        elementType: 'TextImageBanner',
         sectionId: 'home',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 heading: {
                     headingTag: 'h1',
@@ -51,9 +51,9 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: LogosCarousel,
+        elementType: 'LogosCarousel',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             heading: 'Used by teams that you love',
             logos: [
                 { src: wanNain, alt: '' },
@@ -66,10 +66,10 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: InfoGrid,
+        elementType: 'InfoGrid',
         sectionId: 'features',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -114,10 +114,10 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: ImageInfo,
+        elementType: 'ImageInfo',
         sectionId: 'about-us',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -155,9 +155,9 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: ImageInfo,
+        elementType: 'ImageInfo',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -195,10 +195,10 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: TiersInfo,
+        elementType: 'TiersInfo',
         sectionId: 'pricing',
+        sectionCssClasses: "py-12 md:py-18",
         sectionData: {
-            className: "py-12 md:py-18",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -260,9 +260,9 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: AccordionSection,
+        elementType: 'AccordionSection',
+        sectionCssClasses: "py-12 md:py-18",
         sectionData: {
-            className: "py-12 md:py-18",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -325,9 +325,9 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: SubscribeToUpdates,
+        elementType: 'SubscribeToUpdates',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 alignment: 'left',
                 heading: {
@@ -373,10 +373,10 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: ContactForm,
+        elementType: 'ContactForm',
         sectionId: 'contact',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 alignment: 'left',
                 heading: {

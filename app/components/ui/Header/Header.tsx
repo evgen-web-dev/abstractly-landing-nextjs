@@ -40,7 +40,7 @@ export default function Header({ navItems, className }: HeaderProps) {
             <header ref={headerRef} className={"py-5" + (className ? ' ' + className : '') + (yScroll > headerHeight.current ? ' bg-white/90 shadow-md' : '')}>
                 <Container>
                     <div className={"relative flex flex-wrap lg:flex-nowrap lg:items-center " + commonGapClasses} >
-                        <Link href="#home"><Image src={logoImage} alt="logo" priority={true} /></Link>
+                        <Link href="#home"><Image src={logoImage} quality={100} alt="logo" priority={true} unoptimized /></Link>
 
                         <div className="absolute right-2 top-2 lg:!hidden">
                             <BurgerMenuIcon title="Menu" open={menuOpened} onClick={() => setMenuOpened((prevMenuOpened) => !prevMenuOpened)} />

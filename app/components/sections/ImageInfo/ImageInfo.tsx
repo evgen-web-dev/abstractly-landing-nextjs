@@ -29,7 +29,7 @@ export default function ImageInfo({ sectionHeading, gridItems, image, imagePosit
                 </div>
 
                 <div className="w-full lg:w-1/2">
-                    <Image {...image} className="w-full rounded-md shadow-lg" />
+                    <Image {...image} className="w-full rounded-md shadow-lg" quality={100} />
                 </div>
             </div>
         </Container>
