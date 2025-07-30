@@ -134,7 +134,8 @@ type BaseFormFieldData<E extends FormElementType, FV extends FieldValues> = {
     by passing type that describes the shape of particular form via FV generic - we are autmatically narrowing down values
     that can be set to fieldConfig.name
     */ 
-    fieldConfig: FormFieldConfig<FV>
+    fieldConfig: FormFieldConfig<FV>,
+    cssClassName?: string,
 }
 
 

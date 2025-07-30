@@ -27,11 +27,12 @@ type FormFieldProps<E extends FormElementType> = {
     hintMessage?: string,
     label?: string,
     showLabel?: boolean,
-    maxLen?: number
+    maxLen?: number,
+    className?: string
 }
 
 
-export default function FormField<C extends FormElementType>({ as, fieldProps, registerOptions, errorMessage, formId, label, showLabel = true, hintMessage, maxLen }: FormFieldProps<C>) {
+export default function FormField<C extends FormElementType>({ as, fieldProps, registerOptions, errorMessage, formId, label, showLabel = true, hintMessage, maxLen, className }: FormFieldProps<C>) {
     const FormFieldComponent = (as) as ElementType;
 
 
@@ -70,7 +71,7 @@ export default function FormField<C extends FormElementType>({ as, fieldProps, r
 
 
     return (
-        <div className={"form-field" + (errorMessage ? ' form-field--error' : '')}>
+        <div className={"form-field" + (errorMessage ? ' form-field--error' : '') + (className ? ' ' + className : '')}>
             {label && <label className={"form-field__label" + (showLabel ? '' : ' css-clip')} htmlFor={fieldId.current}>{label}</label>}
 
             <FormFieldComponent onChange={onChangeCallback} ref={refCallback} id={fieldId.current} className="form-field__el" {...(fieldProps || {})} {...(restOptions || {})} />
@@ -80,7 +81,7 @@ export default function FormField<C extends FormElementType>({ as, fieldProps, r
                     {errorMessage && <p className="form-field__error-msg">{errorMessage}</p>}
                     {(hintMessage && !errorMessage) && <p className="form-field__hint-msg">{hintMessage}</p>}
                 </div>
-                {(hasNumericValue(maxLen, textLength)) && <span>{textLength}/{maxLen}</span>}
+                {(hasNumericValue(maxLen, textLength)) && <span className="form-field__max-len">{textLength}/{maxLen}</span>}
             </div>
         </div>
     )
