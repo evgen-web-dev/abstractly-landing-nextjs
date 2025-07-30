@@ -20,7 +20,8 @@ export default function Footer({ navItems, socialLinks, bottomElement, className
             <footer className={"py-15 lg:p-24" + (className ? (' ' + className) : '')} >
                 <Container>
                     <NavMenu className="flex flex-col lg:flex-row items-center justify-center gap-3 xl:gap-8" menuItems={navItems} />
-                    <IconNavMenu className="mt-8 flex flex-wrap max-w-3/4 mx-auto items-center justify-center gap-5" menuItems={socialLinks} />
+                    <IconNavMenu className="mt-18 flex flex-wrap max-w-3/4 mx-auto items-center justify-center gap-5" menuItems={socialLinks} />
+                    {bottomElement}
                 </Container>
             </footer>
         </>

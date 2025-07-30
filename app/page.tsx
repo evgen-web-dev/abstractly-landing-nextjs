@@ -5,19 +5,16 @@ import { type IconNavLink } from "./components/ui/Footer/types";
 import { sectionsDummyDataItems } from "./components/sections/constants";
 import { type SectionData } from "./components/sections/types";
 import BaseSection from "./components/sections/BaseSection/BaseSection";
-import Container from "./components/ui/Container/Container";
-import CircleIcon from "./components/ui/CircleIcon/CircleIcon";
-import InfoCard from "./components/ui/InfoCard/InfoCard";
 
 
 export default function Home() {
 
   const navItems: NavLink[] = [
-    { href: '#', title: 'Home' },
-    { href: '#', title: 'Features' },
-    { href: '#', title: 'Pricing' },
-    { href: '#', title: 'About us' },
-    { href: '#', title: 'Contact' },
+    { href: '#home', title: 'Home' },
+    { href: '#features', title: 'Features' },
+    { href: '#pricing', title: 'Pricing' },
+    { href: '#about-us', title: 'About us' },
+    { href: '#contact', title: 'Contact' },
   ];
 
   const footerNavItems = navItems.slice(1);
@@ -32,18 +29,18 @@ export default function Home() {
 
   return (
     <>
-      <Header navItems={navItems} />
+      <Header navItems={navItems} className="sticky top-0 left-0 backdrop-blur-2xl z-[100]" />
 
       <div className="bg-white mx-4 mb-4 shadow-lg rounded-md grow flex flex-col">
         <main>
 
           {sectionsDummyDataItems && sectionsDummyDataItems.map((sectionDataItem: SectionData, index: number) => (
-            <BaseSection key={index} as={sectionDataItem.elementType} {...sectionDataItem.sectionData} />
+            <BaseSection key={index} cssClasses={sectionDataItem.sectionCssClasses} sectionId={sectionDataItem.sectionId} as={sectionDataItem.elementType} {...sectionDataItem.sectionData} />
           ))}
 
         </main>
 
-        <Footer className="mt-auto" navItems={footerNavItems} socialLinks={socialLinks} bottomElement={<p>© 2024 Abstractly, Inc. All rights reserved.</p>} />
+        <Footer className="mt-auto" navItems={footerNavItems} socialLinks={socialLinks} bottomElement={<p className="text-center mt-20">{"© " + ((new Date).getFullYear()) + " Abstractly, Inc. All rights reserved."}</p>} />
       </div>
 
     </>

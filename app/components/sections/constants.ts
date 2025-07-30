@@ -14,12 +14,16 @@ import infoImage from "@/public/sections/info-image.png";
 import infoImage2 from "@/public/sections/info-image-2.png";
 import TiersInfo from "./TiersInfo/TiersInfo";
 import AccordionSection from "./AccordionSection/AccordionSection";
+import SubscribeToUpdates from "./SubscribeToUpdates/SubscribeToUpdates";
+import subscribeToUpdatesImage from "@/public/sections/subscribe-to-updates.png";
+import ContactForm from "./ContactForm/ContactForm";
 
 export const sectionsDummyDataItems: SectionData[] = [
     {
-        elementType: TextImageBanner,
+        elementType: 'TextImageBanner',
+        sectionId: 'home',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 heading: {
                     headingTag: 'h1',
@@ -30,13 +34,13 @@ export const sectionsDummyDataItems: SectionData[] = [
             },
             firstButton: {
                 buttonType: 'anchor',
-                href: '#learn-more',
+                href: '#features',
                 styleType: 'secondary',
                 title: 'Learn More'
             },
             secondButton: {
                 buttonType: 'anchor',
-                href: '#see-pricing',
+                href: '#pricing',
                 styleType: 'primary',
                 title: 'See Pricing'
             },
@@ -47,9 +51,9 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: LogosCarousel,
+        elementType: 'LogosCarousel',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             heading: 'Used by teams that you love',
             logos: [
                 { src: wanNain, alt: '' },
@@ -62,9 +66,10 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: InfoGrid,
+        elementType: 'InfoGrid',
+        sectionId: 'features',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -109,9 +114,10 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: ImageInfo,
+        elementType: 'ImageInfo',
+        sectionId: 'about-us',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -149,9 +155,9 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: ImageInfo,
+        elementType: 'ImageInfo',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
         sectionData: {
-            className: "py-12 md:py-18 xl:py-24",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -189,9 +195,10 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: TiersInfo,
+        elementType: 'TiersInfo',
+        sectionId: 'pricing',
+        sectionCssClasses: "py-12 md:py-18",
         sectionData: {
-            className: "py-12 md:py-18",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -253,9 +260,9 @@ export const sectionsDummyDataItems: SectionData[] = [
         }
     },
     {
-        elementType: AccordionSection,
+        elementType: 'AccordionSection',
+        sectionCssClasses: "py-12 md:py-18",
         sectionData: {
-            className: "py-12 md:py-18",
             sectionHeading: {
                 heading: {
                     headingTag: 'h2',
@@ -309,12 +316,144 @@ export const sectionsDummyDataItems: SectionData[] = [
                 },
                 button: {
                     buttonType: 'anchor',
-                    href: '#get-in-touch',
+                    href: '#contact',
                     styleType: 'primary',
                     title: 'Get in touch'
                 },
                 text: "Reach out to our customer support team."
             }
+        }
+    },
+    {
+        elementType: 'SubscribeToUpdates',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
+        sectionData: {
+            sectionHeading: {
+                alignment: 'left',
+                heading: {
+                    headingTag: 'h2',
+                    text: "Get the finest curated abstracts delivered weekly to your inbox"
+                },
+            },
+            listItems: [
+                "Exclusive access to new abstract images and collections",
+                "Unlock special promotions only for subscribers",
+                "Regular doses of artistic inspiration",
+            ],
+            formData: {
+                fields: [
+                    {
+                        fieldElement: 'input',
+                        fieldProps: {
+                            placeholder: 'example@example.com',
+                            autoComplete: 'off',
+                            type: 'email',
+                        },
+                        fieldConfig: {
+                            name: 'email',
+                            label: 'Email',
+                            showLabel: false,
+                            registerOptions: {
+                                value: '',
+                                required: {
+                                    value: true, message: 'This field is required'
+                                }
+                            },
+                        },
+                    },
+                ],
+                fieldsContainerClass: "grow",
+                formContainerClass: "flex gap-4 md:gap-2.5 items-center flex-wrap md:flex-nowrap",
+                submitButtonData: { cssClasses: '!py-2 !px-4', caption: 'Subscribe' },
+            },
+            image: {
+                src: subscribeToUpdatesImage,
+                alt: 'subscibe to updates'
+            }
+        }
+    },
+    {
+        elementType: 'ContactForm',
+        sectionId: 'contact',
+        sectionCssClasses: "py-12 md:py-18 xl:py-24",
+        sectionData: {
+            sectionHeading: {
+                alignment: 'left',
+                heading: {
+                    headingTag: 'h2',
+                    text: "Talk to our team",
+                },
+                subheading: "We're committed to delivering the support you require to make your experience as smooth as possible."
+            },
+            contactDataRows: [
+                { icon: { iconUrl: "/sections/icons/building.svg" }, content: "123 Maple Street, Springfield, IL, USA" },
+                { icon: { iconUrl: "/sections/icons/phone.svg" }, content: "+1 (650) 555-0198" },
+                { icon: { iconUrl: "/sections/icons/mail.svg" }, content: "hello@abstractly.com" }
+            ],
+            formData: {
+                fieldsContainerClass: "lg:grid-cols-2 gap-7 lg:gap-9",
+                submitButtonData: {
+                    caption: 'Submit', cssClasses: "w-full mt-10 lg:mt-18 text-center justify-center"
+                },
+                fields: [
+                    {
+                        fieldElement: 'input',
+                        fieldProps: {
+                            placeholder: 'Name',
+                            autoComplete: 'off',
+                            type: 'text'
+                        },
+                        fieldConfig: {
+                            name: 'fullName',
+                            label: 'Name',
+                            registerOptions: {
+                                value: '',
+                                required: {
+                                    value: true, message: 'This field is required'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        fieldElement: 'input',
+                        fieldProps: {
+                            placeholder: 'example@example.com',
+                            autoComplete: 'off',
+                            type: 'email'
+                        },
+                        fieldConfig: {
+                            name: 'email',
+                            label: 'Email',
+                            registerOptions: {
+                                value: '',
+                                required: {
+                                    value: true, message: 'This field is required'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        fieldElement: 'textarea',
+                        fieldProps: {
+                            placeholder: 'Message',
+                            autoComplete: 'off',
+                        },
+                        fieldConfig: {
+                            name: 'message',
+                            label: 'Message',
+                            registerOptions: {
+                                value: '',
+                                maxLength: {
+                                    value: 500, message: 'Maximum length for this field is 500 symbols'
+                                }
+                            }
+                        },
+                        cssClassName: "lg:col-span-2"
+                    },
+                ],
+                
+            },
+            
         }
     }
 ]
