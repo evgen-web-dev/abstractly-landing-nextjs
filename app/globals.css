@@ -7,6 +7,7 @@
 
 @theme inline {
   --breakpoint-xl: 76rem;
+  --breakpoint-xxl: 90em;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -132,6 +133,17 @@ body {
       --slides: 6;
     }
   }
+
+
+  .logos-carousel .embla__slide {
+    @apply max-h-[50px];
+
+    @variant xxl {
+      flex: 0 0 auto;
+    }
+  }
+
+  
 
   .css-clip {
     position: absolute !important;
