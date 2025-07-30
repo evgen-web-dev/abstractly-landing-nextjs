@@ -29,7 +29,7 @@ export default function TextImageBanner({ sectionHeading, firstButton, secondBut
                     </div>
                 </div>
 
-                <Image className="w-full lg:w-[58%]" {...image} />
+                <Image className="w-full lg:w-[58%]" {...image} quality={100} priority={true} />
             </div>
         </Container>
     )

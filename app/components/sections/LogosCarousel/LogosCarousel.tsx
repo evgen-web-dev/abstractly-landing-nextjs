@@ -7,7 +7,7 @@ import Container from "../../ui/Container/Container"
 export type LogosCarouselProps = {
     heading: string,
     logos: Image[]
-}
+} & ComponentPropsWithoutRef<'div'>
 
 
 export default function LogosCarousel({ heading, logos }: LogosCarouselProps) {

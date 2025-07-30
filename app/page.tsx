@@ -35,7 +35,7 @@ export default function Home() {
         <main>
 
           {sectionsDummyDataItems && sectionsDummyDataItems.map((sectionDataItem: SectionData, index: number) => (
-            <BaseSection key={index} sectionId={sectionDataItem.sectionId} as={sectionDataItem.elementType} {...sectionDataItem.sectionData} />
+            <BaseSection key={index} cssClasses={sectionDataItem.sectionCssClasses} sectionId={sectionDataItem.sectionId} as={sectionDataItem.elementType} {...sectionDataItem.sectionData} />
           ))}
 
         </main>
