@@ -13,11 +13,12 @@ import { type AllSectionsElementsType } from "../types";
 
 type BaseSectionProps<T extends AllSectionsElementsType> = {
     as: T,
-    children?: ReactNode
-} & ComponentPropsWithoutRef<'section'>;
+    children?: ReactNode,
+    sectionId?: string
+} & Omit<ComponentPropsWithoutRef<'section'>, 'id'>;
 
 
-export default function BaseSection<C extends AllSectionsElementsType>({ as, children, className, ...props }: BaseSectionProps<C>) {
+export default function BaseSection<C extends AllSectionsElementsType>({ as, children, className, sectionId, ...props }: BaseSectionProps<C>) {
 
     // We are type-guarding element that can be passed via "as" props with the help of AllSectionsElementsType type, so
     // we can type-cast "as" as ElementType to convinse TS that we know what element SectionComponent is 
@@ -26,7 +27,7 @@ export default function BaseSection<C extends AllSectionsElementsType>({ as, chi
     const SectionComponent = as as ElementType;
 
     return (
-        <section className={className}>
+        <section id={sectionId} className={className}>
             <SectionComponent {...props}>{children}</SectionComponent>
         </section>
     )

@@ -7,6 +7,10 @@ import SubscribeToUpdates, { SubscribeToUpdatesProps } from "./SubscribeToUpdate
 import TextImageBanner, { type TextImageBannerProps } from "./TextImageBanner/TextImageBanner";
 import TiersInfo, { TiersInfoProps } from "./TiersInfo/TiersInfo";
 
+
+type SectionId = 'home' | 'features' | 'pricing' | 'about-us' | 'contact';
+
+
 // in this type -> all sections component's props types should be merged to define a union type of props for all sections
 export type AllSectionsPropsType = TextImageBannerProps
     | LogosCarouselProps
@@ -36,7 +40,8 @@ export type AllSectionsElementsType = typeof TextImageBanner
 // create universal ("polimorphic") <BaseSection /> component to render ONLY section-related components specifically
 export type BaseSectionData<E extends AllSectionsElementsType, S extends AllSectionsPropsType> = {
     elementType: E,
-    sectionData: S
+    sectionData: S,
+    sectionId?: SectionId
 }
 
 
